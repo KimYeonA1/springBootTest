@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+.carouselSection{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+
+}
+ .carousel {
+   position: relative;
+    width: 100%; /* 부모 요소의 전체 너비를 차지 */
+    max-width: 800px; /* 슬라이드 쇼의 최대 크기 설정 */
+    margin: 0 auto; /* 슬라이드 쇼를 가운데 정렬 */
+    overflow: hidden; /* 슬라이드 쇼 영역 밖의 내용 숨김 */
+    box-sizing: border-box; /* 패딩 및 보더 포함 */
+}
+div#slide_show {
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  
+}
+.carousel img {
+  position: absolute;
+  width: 800px;
+}
+
+div#indicator {
+  z-index: 10;
+}
+#navgateleft {
+  z-index: 10;
+  position: absolute;
+  font-size: 40px;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  left: 10%;
+  color: rgba(255, 255, 255, 0.651);
+}
+#navgateright {
+  z-index: 10;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  left: 90%;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.651);
+}
+#navgateleft:hover,
+#navgateright:hover {
+  color: rgba(255, 255, 255, 0.911);
+  cursor: pointer;
+}
+
+#indicator i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+#indicator i:hover {
+  color: rgba(255, 255, 255, 0.911);
+  cursor: pointer;
+}
+#indicator {
+  position: absolute;
+  bottom: 20px;
+  color: rgba(255, 255, 255, 0.651);
+  transform: translate(-50%);
+  left: 50%;
+}
+.active {
+  color: black;
+}

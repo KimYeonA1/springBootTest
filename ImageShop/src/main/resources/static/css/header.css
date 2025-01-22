@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* header.css */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* 배경색: 흰색 */
+  color: gray; /* 기본 텍스트 색: 회색 */
+}
+
+#header a {
+  text-decoration: none;
+  color: gray; /* 링크 색상: 회색 */
+  font-size: 16px;
+}
+
+#header a:hover {
+  color: black; /* 호버 시 링크 색상: 갈색 */
+}
+hr {
+    display: none;
+}

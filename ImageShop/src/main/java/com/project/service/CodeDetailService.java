@@ -11,7 +11,7 @@ public interface CodeDetailService {
 	// 목록 페이지
 	public List<CodeDetail> list() throws Exception;
 
-	// 상세 페이지
+	// 상세 페이지(수정 페이지)
 	public CodeDetail read(CodeDetail codeDetail) throws Exception;
 
 	// 수정 처리
@@ -19,5 +19,4 @@ public interface CodeDetailService {
 
 	// 삭제 처리
 	public void remove(CodeDetail codeDetail) throws Exception;
-
 }

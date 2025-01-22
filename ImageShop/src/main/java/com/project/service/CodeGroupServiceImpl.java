@@ -19,9 +19,9 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 		mapper.create(codeGroup);
 	}
 
+	// 목록 페이지
 	@Override
 	public List<CodeGroup> list() throws Exception {
-
 		return mapper.list();
 	}
 
@@ -31,16 +31,15 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 		return mapper.read(groupCode);
 	}
 
+	// 수정 처리
 	@Override
 	public void modify(CodeGroup codeGroup) throws Exception {
 		mapper.update(codeGroup);
-		
 	}
 
+	// 삭제 처리
 	@Override
 	public void remove(String groupCode) throws Exception {
 		mapper.delete(groupCode);
-		
 	}
-
 }

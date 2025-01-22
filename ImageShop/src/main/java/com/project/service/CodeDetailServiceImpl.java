@@ -14,6 +14,7 @@ public class CodeDetailServiceImpl implements CodeDetailService {
 	@Autowired
 	private CodeDetailMapper mapper;
 
+	// 등록 처리
 	@Override
 	public void register(CodeDetail codeDetail) throws Exception {
 		String groupCode = codeDetail.getGroupCode();
@@ -45,5 +46,4 @@ public class CodeDetailServiceImpl implements CodeDetailService {
 	public void remove(CodeDetail codeDetail) throws Exception {
 		mapper.delete(codeDetail);
 	}
-
 }

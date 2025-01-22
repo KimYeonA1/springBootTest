@@ -3,6 +3,7 @@ package com.project.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +17,15 @@ import com.project.service.CodeService;
 
 @Controller
 @RequestMapping("/codedetail")
+//관리자 권한을 가진 사용자만 접근이 가능하다. 
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 public class CodeDetailController {
+
 	@Autowired
 	private CodeDetailService codeDetailService;
 
-	// 사용되고 있는 그룹코드정보 관리서비스
 	@Autowired
+	// 사용되고 있는 그룹코드 정보 관리 서비스
 	private CodeService codeService;
 
 	// 등록 페이지
@@ -30,7 +34,7 @@ public class CodeDetailController {
 		CodeDetail codeDetail = new CodeDetail();
 		model.addAttribute(codeDetail);
 
-		// 그룹코드 목록을 조회하여 뷰에 전달(사용허가설정이 되어있는 그룹코드만 가져온다)
+		// 그룹코드 목록을 조회하여 뷰에 전달(사용허가 설정이 돼잇는 그룹 코드만 가져온다)
 		List<CodeLabelValue> groupCodeList = codeService.getCodeGroupList();
 		model.addAttribute("groupCodeList", groupCodeList);
 	}
@@ -39,6 +43,7 @@ public class CodeDetailController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String register(CodeDetail codeDetail, RedirectAttributes rttr) throws Exception {
 		codeDetailService.register(codeDetail);
+
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/codedetail/list";
 	}
@@ -53,7 +58,7 @@ public class CodeDetailController {
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public void read(CodeDetail codeDetail, Model model) throws Exception {
 		model.addAttribute(codeDetailService.read(codeDetail));
-		// 사용할 수 있는 그룹코드 목록을 조회하여 뷰에 전달
+		// 그룹코드 목록을 조회하여 뷰에 전달
 		List<CodeLabelValue> groupCodeList = codeService.getCodeGroupList();
 		model.addAttribute("groupCodeList", groupCodeList);
 	}
@@ -72,6 +77,7 @@ public class CodeDetailController {
 	public String modify(CodeDetail codeDetail, RedirectAttributes rttr) throws Exception {
 		codeDetailService.modify(codeDetail);
 		rttr.addFlashAttribute("msg", "SUCCESS");
+
 		return "redirect:/codedetail/list";
 	}
 
@@ -82,5 +88,4 @@ public class CodeDetailController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/codedetail/list";
 	}
-
 }

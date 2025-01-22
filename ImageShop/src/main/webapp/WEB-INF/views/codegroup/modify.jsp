@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/codegroup.css">
 <title>Image Shop</title>
+<link rel="stylesheet" href="/css/codegroup.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -16,7 +16,6 @@
 		<h2>
 			<spring:message code="codegroup.header.register" />
 		</h2>
-
 		<form:form modelAttribute="codeGroup" action="/codegroup/modify" method="post">
 			<table class="input_table">
 				<tr>
@@ -31,12 +30,11 @@
 				</tr>
 			</table>
 		</form:form>
-
 		<div>
 			<button type="button" id="btnModify">
 				<spring:message code="action.modify" />
 			</button>
-			<button type="button" id="btnList">
+			<button type="button"" id="btnList">
 				<spring:message code="action.list" />
 			</button>
 		</div>
@@ -55,5 +53,6 @@
 			});
 		});
 	</script>
+
 </body>
 </html>

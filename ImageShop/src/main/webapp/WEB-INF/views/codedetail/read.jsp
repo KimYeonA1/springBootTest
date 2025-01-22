@@ -6,16 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/codedetail.css">
 <title>Image Shop</title>
+<link rel="stylesheet" href="/css/codedetail.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 	<jsp:include page="/WEB-INF/views/common/menu.jsp" />
 	<main align="center">
+
+
 		<h2>
 			<spring:message code="codedetail.header.read" />
 		</h2>
+
 		<form:form modelAttribute="codeDetail">
 			<table class="codedetail_table">
 				<tr>
@@ -48,17 +51,33 @@
 				<spring:message code="action.list" />
 			</button>
 		</div>
+
+
 	</main>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
 	<script>
 		$(document).ready(
 				function() {
+
 					var formObj = $("#codeDetail");
+
 					$("#btnEdit").on("click",
 							function() {
 								formObj.attr("action", "/codedetail/modify");
 								formObj.attr("method", "get");
 								formObj.submit();
+
+								/* var groupCode = $("#groupCode");
+								var groupCodeVal = groupCode.val();
+
+								var codeValue = $("#codeValue");
+								var codeValueVal = codeValue.val();
+
+								self.location = "/codedetail/modify?groupCode="
+										+ groupCodeVal + "&" + "codeValue="
+										+ codeValueVal; */
 							});
 
 					$("#btnRemove").on("click", function() {
@@ -69,7 +88,11 @@
 					$("#btnList").on("click", function() {
 						self.location = "list";
 					});
+
 				});
 	</script>
+
+
+
 </body>
 </html>

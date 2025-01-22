@@ -6,13 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/codedetail.css">
 <title>Image Shop</title>
+<link rel="stylesheet" href="/css/codedetail.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 	<jsp:include page="/WEB-INF/views/common/menu.jsp" />
 	<main align="center">
+
+
 		<h2>
 			<spring:message code="codedetail.header.register" />
 		</h2>
@@ -44,8 +46,11 @@
 			</button>
 		</div>
 
+
 	</main>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
 	<script>
 		$(document).ready(function() {
 			var formObj = $("#codeDetail");
@@ -58,5 +63,8 @@
 			});
 		});
 	</script>
+
+
+
 </body>
 </html>

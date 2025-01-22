@@ -7,13 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/css/codegroup.css">
 <title>Image Shop</title>
+<link rel="stylesheet" href="/css/codegroup.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 	<jsp:include page="/WEB-INF/views/common/menu.jsp" />
 	<main align="center">
+
 		<h2>
 			<spring:message code="codegroup.header.read" />
 		</h2>
@@ -44,12 +45,14 @@
 		</div>
 	</main>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
 	<script>
 		$(document).ready(function() {
 			var formObj = $("#codeGroup");
 			$("#btnEdit").on("click", function() {
 				var groupCode = $("#groupCode");
 				var groupCodeVal = groupCode.val();
+
 				self.location = "modify?groupCode=" + groupCodeVal;
 			});
 			$("#btnRemove").on("click", function() {
@@ -61,5 +64,6 @@
 			});
 		});
 	</script>
+
 </body>
 </html>
